@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prismatic.API", "Prismatic.API\Prismatic.API.csproj", "{BC4367A5-B582-4BD7-9EA8-C92EFDF08C3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prismatic.API", "Prismatic.API\Prismatic.API.csproj", "{BC4367A5-B582-4BD7-9EA8-C92EFDF08C3D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{AAA106BF-00F8-44A3-A562-0F6752DE447F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prismatic.Core", "..\Prismatic.Core\Prismatic.Core.csproj", "{0E2A3228-CCA6-443B-A29F-8053324D0791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{BC4367A5-B582-4BD7-9EA8-C92EFDF08C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC4367A5-B582-4BD7-9EA8-C92EFDF08C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC4367A5-B582-4BD7-9EA8-C92EFDF08C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA106BF-00F8-44A3-A562-0F6752DE447F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA106BF-00F8-44A3-A562-0F6752DE447F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA106BF-00F8-44A3-A562-0F6752DE447F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA106BF-00F8-44A3-A562-0F6752DE447F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E2A3228-CCA6-443B-A29F-8053324D0791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E2A3228-CCA6-443B-A29F-8053324D0791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E2A3228-CCA6-443B-A29F-8053324D0791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E2A3228-CCA6-443B-A29F-8053324D0791}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

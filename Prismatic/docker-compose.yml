@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  prismatic.api:
+    image: ${DOCKER_REGISTRY-}prismaticapi
+    build:
+      context: .
+      dockerfile: Prismatic.API/Dockerfile
+    depends_on:
+        - prismatic.db
+
+  prismatic.db:
+    image: mongo
+    restart: unless-stopped
+    ports:
+        - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}  
