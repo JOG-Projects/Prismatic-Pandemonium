@@ -2,7 +2,7 @@
 using Prismatic.Domain.Entities;
 using Prismatic.Domain.Interfaces;
 
-namespace Prismatic.API.Endpoints
+namespace Prismatic.API.Endpoints.Matches
 {
     public class CreateMatch : IEndpointDefinition
     {
@@ -13,7 +13,7 @@ namespace Prismatic.API.Endpoints
 
         public async Task Handler(IMatchRepository matchRepository)
         {
-            await matchRepository.Add(new Match { Name = "sexo" });
+            await matchRepository.Add(new Match { Name = "Uno Maluco" });
         }
     }
 }

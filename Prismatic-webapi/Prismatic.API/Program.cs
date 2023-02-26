@@ -6,8 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.ConfigurePrismaticServices();
 builder.Services.AddCors();
+
+builder.Services.ConfigurePrismaticServices();
 builder.ConfigureMongoClient();
 
 var app = builder.Build();
