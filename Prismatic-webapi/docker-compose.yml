@@ -8,6 +8,8 @@ services:
       dockerfile: Prismatic.API/Dockerfile
     depends_on:
         - prismatic.db
+    environment:
+        MONGO_PASSWORD: ${MONGO_PASSWORD}  
 
   prismatic.db:
     image: mongo
