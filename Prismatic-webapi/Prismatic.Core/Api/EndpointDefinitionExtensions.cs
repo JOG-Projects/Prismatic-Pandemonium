@@ -40,7 +40,7 @@ namespace Prismatic.Core.Api
         private static IEnumerable<Type> GetEndpointsTypes()
         {
             var types = Assembly.GetEntryAssembly()!.ExportedTypes;
-            return types.Where(x => typeof(IEndpointDefinition).IsAssignableFrom(x) && !x.IsInterface);
+            return types.Where(t => typeof(IEndpointDefinition).IsAssignableFrom(t) && !t.IsInterface);
         }
     }
 }
