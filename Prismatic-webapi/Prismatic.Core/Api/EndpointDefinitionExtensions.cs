@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace Prismatic.Core.Api
 {
@@ -26,9 +27,9 @@ namespace Prismatic.Core.Api
             });
         }
 
-        public static void UseEndpointDefinitions(this WebApplication app, Type type)
+        public static void UseEndpointDefinitions(this WebApplication app)
         {
-            var definitions = GetEndpointsTypes(type).Select(Activator.CreateInstance).Cast<IEndpointDefinition>();
+            var definitions = GetEndpointsTypes().Select(Activator.CreateInstance).Cast<IEndpointDefinition>();
 
             foreach (var endpointDefinition in definitions)
             {
@@ -36,9 +37,9 @@ namespace Prismatic.Core.Api
             }
         }
 
-        private static IEnumerable<Type> GetEndpointsTypes(Type type)
+        private static IEnumerable<Type> GetEndpointsTypes()
         {
-            return type.Assembly.ExportedTypes.Where(x => typeof(IEndpointDefinition).IsAssignableFrom(x) && !x.IsInterface);
+            return Assembly.GetExecutingAssembly().ExportedTypes.Where(x => typeof(IEndpointDefinition).IsAssignableFrom(x) && !x.IsInterface);
         }
     }
 }
