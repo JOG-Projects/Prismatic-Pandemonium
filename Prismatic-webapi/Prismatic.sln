@@ -9,9 +9,9 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prismatic.Core", "Prismatic.Core\Prismatic.Core.csproj", "{8310510C-32A6-49A5-8CCD-6BE9264EBFCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prismatic.Domain", "..\Prismatic.Domain\Prismatic.Domain.csproj", "{5C8B44A2-EB0E-42AA-86B8-72AAC8DD19E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prismatic.Domain", "Prismatic.Domain\Prismatic.Domain.csproj", "{6CA25409-A398-48CF-8C8C-2EE6D6549867}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prismatic.Infra", "..\Prismatic.Infra\Prismatic.Infra.csproj", "{6FABD11F-35EE-4777-B645-A9B33A7E322B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prismatic.Infra", "Prismatic.Infra\Prismatic.Infra.csproj", "{F1331C1B-7F22-4ACA-A891-5F5C0F5C97DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{8310510C-32A6-49A5-8CCD-6BE9264EBFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8310510C-32A6-49A5-8CCD-6BE9264EBFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8310510C-32A6-49A5-8CCD-6BE9264EBFCB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C8B44A2-EB0E-42AA-86B8-72AAC8DD19E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C8B44A2-EB0E-42AA-86B8-72AAC8DD19E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C8B44A2-EB0E-42AA-86B8-72AAC8DD19E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C8B44A2-EB0E-42AA-86B8-72AAC8DD19E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FABD11F-35EE-4777-B645-A9B33A7E322B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FABD11F-35EE-4777-B645-A9B33A7E322B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FABD11F-35EE-4777-B645-A9B33A7E322B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FABD11F-35EE-4777-B645-A9B33A7E322B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA25409-A398-48CF-8C8C-2EE6D6549867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA25409-A398-48CF-8C8C-2EE6D6549867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA25409-A398-48CF-8C8C-2EE6D6549867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA25409-A398-48CF-8C8C-2EE6D6549867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1331C1B-7F22-4ACA-A891-5F5C0F5C97DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1331C1B-7F22-4ACA-A891-5F5C0F5C97DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1331C1B-7F22-4ACA-A891-5F5C0F5C97DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1331C1B-7F22-4ACA-A891-5F5C0F5C97DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

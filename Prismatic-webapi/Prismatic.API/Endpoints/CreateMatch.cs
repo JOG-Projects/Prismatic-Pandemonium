@@ -1,5 +1,4 @@
 ﻿using Prismatic.Core.Api;
-using Prismatic.Core.Domain;
 using Prismatic.Domain.Entities;
 using Prismatic.Domain.Interfaces;
 
@@ -12,7 +11,7 @@ namespace Prismatic.API.Endpoints
             app.MapGet("match/create", (IMatchRepository matchRepository) =>
             {
                 matchRepository.Add(new Match { Name = "sexo" });
-            });
+            }).WithOpenApi();
         }
     }
 }

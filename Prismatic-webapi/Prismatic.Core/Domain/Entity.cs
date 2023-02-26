@@ -1,4 +1,4 @@
-﻿namespace Prismatic.Domain
+﻿namespace Prismatic.Core.Domain
 {
     public abstract class Entity
     {
