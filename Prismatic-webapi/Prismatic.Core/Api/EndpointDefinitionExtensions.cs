@@ -26,13 +26,9 @@ namespace Prismatic.Core.Api
             });
         }
 
-        public static void UseEndpointDefinitions(this WebApplication app, params Type[] types)
+        public static void UseEndpointDefinitions(this WebApplication app, Type type)
         {
-            var definitions = types
-                .Select(t => GetEndpointsTypes(t)
-                .Select(Activator.CreateInstance)
-                .Cast<IEndpointDefinition>())
-                .SelectMany(d => d);
+            var definitions = GetEndpointsTypes(type).Select(Activator.CreateInstance).Cast<IEndpointDefinition>();
 
             foreach (var endpointDefinition in definitions)
             {
