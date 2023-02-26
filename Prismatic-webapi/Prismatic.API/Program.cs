@@ -13,12 +13,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseEndpointDefinitions();
+app.UseEndpointDefinitions(typeof(Program));
 app.UseCustomExceptionHandler();
-
-app.MapGet("/endpoint", () =>
-{
-    throw new Exception("bizarro...");
-});
 
 app.Run();
