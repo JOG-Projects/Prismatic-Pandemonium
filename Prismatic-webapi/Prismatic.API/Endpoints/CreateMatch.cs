@@ -8,10 +8,12 @@ namespace Prismatic.API.Endpoints
     {
         public void DefineEndpoints(WebApplication app)
         {
-            app.MapGet("match/create", (IMatchRepository matchRepository) =>
-            {
-                matchRepository.Add(new Match { Name = "sexo" });
-            }).WithOpenApi();
+            app.MapGet("match/create", Handler).WithOpenApi();
+        }
+
+        public async Task Handler(IMatchRepository matchRepository)
+        {
+            await matchRepository.Add(new Match { Name = "sexo" });
         }
     }
 }
