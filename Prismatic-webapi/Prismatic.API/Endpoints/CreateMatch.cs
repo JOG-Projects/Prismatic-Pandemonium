@@ -1,4 +1,7 @@
 ﻿using Prismatic.Core.Api;
+using Prismatic.Core.Domain;
+using Prismatic.Domain.Entities;
+using Prismatic.Domain.Interfaces;
 
 namespace Prismatic.API.Endpoints
 {
@@ -6,9 +9,9 @@ namespace Prismatic.API.Endpoints
     {
         public void DefineEndpoints(WebApplication app)
         {
-            app.MapGet("match/create", () =>
+            app.MapGet("match/create", (IMatchRepository matchRepository) =>
             {
-                throw new Exception("bizarro...");
+                matchRepository.Add(new Match { Name = "sexo" });
             });
         }
     }
