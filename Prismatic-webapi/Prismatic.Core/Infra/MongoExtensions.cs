@@ -11,9 +11,13 @@ namespace Prismatic.Core.Infra
             var mongoPassword = 
                 Environment.GetEnvironmentVariable("MONGO_PASSWORD") 
                 ?? 
-                throw new Exception("Environment Variable MONGO_PASSWORD not declared");
+                throw new Exception("Environment Variable MONGO_PASSWORD not defined");
 
-            var connectionString = builder.Configuration.GetConnectionString("MongoDb");
+            var connectionString =
+                builder.Configuration.GetConnectionString("MongoDb")
+                ??
+                throw new Exception("MongoDb ConnectionString not defined in appsettings");
+                
             builder.Services.AddMongoClient(connectionString.Replace("MONGO_PASSWORD", mongoPassword));
         }
     }
