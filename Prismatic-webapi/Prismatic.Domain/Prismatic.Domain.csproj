@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Prismatic-webapi\Prismatic.Core\Prismatic.Core.csproj" />
     <ProjectReference Include="..\Prismatic.Core\Prismatic.Core.csproj" />
   </ItemGroup>
 
