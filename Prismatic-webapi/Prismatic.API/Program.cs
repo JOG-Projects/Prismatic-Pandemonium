@@ -13,7 +13,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseEndpointDefinitions(typeof(Program));
+app.UseEndpointDefinitions();
 app.UseCustomExceptionHandler();
 
 app.Run();
