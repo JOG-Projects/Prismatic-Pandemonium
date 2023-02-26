@@ -1,6 +1,5 @@
 ﻿using MongoDB.Driver;
 using Prismatic.Core.Domain;
-using Prismatic.Domain;
 
 namespace Prismatic.Core.Infra
 {
