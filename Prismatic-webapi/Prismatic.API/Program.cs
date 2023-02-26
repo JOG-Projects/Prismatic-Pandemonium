@@ -1,3 +1,5 @@
+using Prismatic.Core.Api;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -11,9 +13,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseEndpointDefinitions();
+app.UseCustomExceptionHandler();
+
 app.MapGet("/endpoint", () =>
 {
-    
+    throw new Exception("bizarro...");
 });
 
 app.Run();
