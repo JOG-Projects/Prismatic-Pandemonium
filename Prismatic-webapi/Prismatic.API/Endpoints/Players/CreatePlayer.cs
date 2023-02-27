@@ -1,5 +1,6 @@
-﻿using Prismatic.Core.Api;
-using Prismatic.Domain.Interfaces;
+﻿using MediatR;
+using Prismatic.Application.Players;
+using Prismatic.Core.Api;
 
 namespace Prismatic.API.Endpoints.Players
 {
@@ -7,12 +8,12 @@ namespace Prismatic.API.Endpoints.Players
     {
         public void DefineEndpoints(WebApplication app)
         {
-
+            app.MapPost("player", Handler).WithOpenApi();
         }
 
-        public Task Handler(IMatchRepository matchRepository)
+        public async Task Handler(IMediator mediator, string username)
         {
-            throw new NotImplementedException();
+            await mediator.Send(new CreatePlayerRequest(username));
         }
     }
 }
