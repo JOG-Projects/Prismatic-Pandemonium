@@ -14,7 +14,7 @@ namespace Prismatic.API
             services.AddTransient<IPlayerRepository, PlayerRepository>();
         }
 
-        public static void UsePrismaticHubs(this WebApplication app) 
+        public static void UsePrismaticHubs(this WebApplication app)
         {
             app.MapHub<MatchHub>("/match");
             app.MapHub<LobbyHub>("/lobby");
