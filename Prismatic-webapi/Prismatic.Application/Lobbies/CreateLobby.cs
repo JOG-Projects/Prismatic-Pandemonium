@@ -6,27 +6,36 @@ namespace Prismatic.Application.Lobbies
 {
     public class CreateLobbyRequest : IRequest<Guid>
     {
-        public CreateLobbyRequest(Player owner)
+        public CreateLobbyRequest(Guid ownerId)
         {
-            Owner = owner;
+            OwnerId = ownerId;
         }
 
-        public Player Owner { get; }
+        public Guid OwnerId { get; }
     }
 
-    public class CreateLobbyResponse : IRequestHandler<CreateLobbyRequest, Guid>
+    public class CreateLobbyHandler : IRequestHandler<CreateLobbyRequest, Guid>
     {
         private readonly ILobbyRepository _lobbyRepository;
+        private readonly IPlayerRepository _playerRepository;
 
-        public CreateLobbyResponse(ILobbyRepository repository)
+        public CreateLobbyHandler(ILobbyRepository lobbyRepository, IPlayerRepository playerRepository)
         {
-            _lobbyRepository = repository;
+            _lobbyRepository = lobbyRepository;
+            _playerRepository = playerRepository;
         }
 
-        public async Task<Guid> Handle(CreateLobbyRequest request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(CreateLobbyRequest request, CancellationToken ct)
         {
-            var lobby = new Lobby { Players = new List<Player> { request.Owner } };
-            return await _lobbyRepository.Add(lobby);
+            var owner = await _playerRepository.Get(request.OwnerId) ?? throw new Exception("Jogador não existe na base");
+
+            var lobby = new Lobby { OwnerId = request.OwnerId };
+            lobby.Players.Add(owner);
+
+            await _lobbyRepository.Add(lobby);
+            await _playerRepository.SetCurrentLobby(request.OwnerId, lobby);
+
+            return lobby.Id;
         }
     }
 }
