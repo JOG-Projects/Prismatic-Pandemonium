@@ -15,20 +15,24 @@ namespace Prismatic.Infra.Hubs
 
         public override async Task OnConnectedAsync()
         {
-            var username = Context.User!.Identity!.Name ?? throw new Exception("Connection without username received");
+            var username = Context.User!.Identity!.Name ??
+                throw new Exception("Connection without username received");
 
             await _playerRepository.ChangeStatus(username, Context.ConnectionId);
 
             var player = await _playerRepository.GetByUsername(username);
+            var lobby = player.CurrentLobby ?? 
+                throw new Exception($"Player: {player.Username} tentou conectar sem um lobbyId");
 
-            await JoinLobby(player.CurrentLobby, player);
+            await JoinLobby(lobby, player);
 
             await base.OnConnectedAsync();
         }
 
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
-            var username = Context.User!.Identity!.Name ?? throw new Exception("Connection without username received");
+            var username = Context.User!.Identity!.Name ??
+                throw new Exception("Connection without username received");
 
             await _playerRepository.ChangeStatus(username);
 

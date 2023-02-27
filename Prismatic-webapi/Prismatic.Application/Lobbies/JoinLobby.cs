@@ -31,7 +31,8 @@ namespace Prismatic.Application.Lobbies
 
         public async Task Handle(JoinLobbyRequest request, CancellationToken ct)
         {
-            var lobby = await _lobbyRepository.Get(request.LobbyId) ?? throw new Exception("Lobby não existe");
+            var lobby = await _lobbyRepository.Get(request.LobbyId) ??
+                throw new Exception("Lobby não existe");
 
             var group = _lobbyHub.Clients.Group(request.LobbyId.ToString());
 

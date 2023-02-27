@@ -27,7 +27,8 @@ namespace Prismatic.Application.Lobbies
 
         public async Task<Guid> Handle(CreateLobbyRequest request, CancellationToken ct)
         {
-            var owner = await _playerRepository.Get(request.OwnerId) ?? throw new Exception("Jogador não existe na base");
+            var owner = await _playerRepository.Get(request.OwnerId) ??
+                throw new Exception("Jogador não existe na base");
 
             var lobby = new Lobby { OwnerId = request.OwnerId, Status = GameStatus.Open };
             lobby.Players.Add(owner);
