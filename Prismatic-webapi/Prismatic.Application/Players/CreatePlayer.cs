@@ -25,7 +25,7 @@ namespace Prismatic.Application.Players
 
         public async Task<Guid> Handle(CreatePlayerRequest request, CancellationToken cancellationToken)
         {
-            return await _playerRepository.Add(new Player { Username = request.Username });
+            return await _playerRepository.Add(new Player { Username = request.Username, Status = Status.Offline });
         }
     }
 }
