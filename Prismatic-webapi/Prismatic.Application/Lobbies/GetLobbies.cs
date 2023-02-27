@@ -19,7 +19,7 @@ namespace Prismatic.Application.Lobbies
 
         public async Task<List<Lobby>> Handle(GetLobbiesRequest request, CancellationToken cancellationToken)
         {
-            return await _lobbyRepository.GetAll();
+            return await _lobbyRepository.Get(x => x.Status != GameStatus.Closed);
         }
     }
 }
