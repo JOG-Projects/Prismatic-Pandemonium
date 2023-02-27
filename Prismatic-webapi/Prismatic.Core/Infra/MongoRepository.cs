@@ -7,10 +7,11 @@ namespace Prismatic.Core.Infra
     {
         protected IMongoCollection<T> Collection { get; }
 
-        protected abstract string CollectionName { get; }
+        protected string CollectionName { get; }
 
         public MongoRepository(IMongoClient mongoClient)
         {
+            CollectionName = typeof(T).Name;
             var db = mongoClient.GetDatabase("Prismatic");
             Collection = db.GetCollection<T>(CollectionName);
         }
@@ -29,6 +30,11 @@ namespace Prismatic.Core.Infra
         public async Task<List<T>> GetAll()
         {
             return await Collection.Find(_ => true).ToListAsync();
+        }
+
+        public async Task Replace(Guid id, T newEntity)
+        {
+            await Collection.ReplaceOneAsync(x => x.Id == id, newEntity);
         }
     }
 }

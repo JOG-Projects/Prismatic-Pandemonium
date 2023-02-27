@@ -7,5 +7,7 @@
         public Task<T> Get(Guid id);
 
         public Task<List<T>> GetAll();
+
+        public Task Replace(Guid id, T newEntity);
     }
 }
