@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using Prismatic.Core.Domain;
+using System.Linq.Expressions;
 
 namespace Prismatic.Core.Infra
 {
@@ -27,9 +28,9 @@ namespace Prismatic.Core.Infra
             return await Collection.Find(x => x.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<List<T>> GetAll()
+        public async Task<List<T>> Get(Func<T, bool> filter)
         {
-            return await Collection.Find(_ => true).ToListAsync();
+            return await Collection.Find(x => filter(x)).ToListAsync();
         }
 
         public async Task Replace(Guid id, T newEntity)
