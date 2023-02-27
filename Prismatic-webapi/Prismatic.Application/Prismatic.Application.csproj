@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Prismatic.Domain\Prismatic.Domain.csproj" />
+    <ProjectReference Include="..\Prismatic.Infra\Prismatic.Infra.csproj" />
   </ItemGroup>
 
 </Project>
