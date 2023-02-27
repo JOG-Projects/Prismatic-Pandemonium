@@ -1,5 +1,4 @@
-﻿using Prismatic.Domain.Interfaces;
-using Prismatic.Domain.Repositories;
+﻿using Prismatic.Domain.Repositories;
 using Prismatic.Infra.Hubs;
 using Prismatic.Infra.Repositories;
 
@@ -9,7 +8,6 @@ namespace Prismatic.API
     {
         public static void ConfigurePrismaticServices(this IServiceCollection services)
         {
-            services.AddTransient<IMatchRepository, MatchRepository>();
             services.AddTransient<ILobbyRepository, LobbyRepository>();
             services.AddTransient<IPlayerRepository, PlayerRepository>();
         }
