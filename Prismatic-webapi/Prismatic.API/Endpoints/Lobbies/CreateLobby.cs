@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Prismatic.Application.Lobbies;
 using Prismatic.Core.Api;
-using Prismatic.Domain.Entities;
 
 namespace Prismatic.API.Endpoints.Lobbies
 {
@@ -9,12 +8,12 @@ namespace Prismatic.API.Endpoints.Lobbies
     {
         public void DefineEndpoints(WebApplication app)
         {
-            app.MapGet("lobby/create", Handler).WithOpenApi();
+            app.MapPost("lobby", Handler).WithOpenApi();
         }
 
-        public async Task Handler(IMediator mediator, Player owner)
+        public async Task<Guid> Handler(IMediator mediator, Guid ownerId)
         {
-            await mediator.Send(new CreateLobbyRequest(owner));
+            return await mediator.Send(new CreateLobbyRequest(ownerId));
         }
     }
 }
