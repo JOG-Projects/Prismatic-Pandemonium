@@ -9,7 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
 builder.Services.AddSignalR();
-builder.Services.AddMediatR(x => x.RegisterServicesFromAssemblyContaining(typeof(HandlersAssemblyMark)));
+builder.Services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining(typeof(HandlersAssemblyMark)));
 builder.Services.ConfigurePrismaticServices();
 builder.ConfigureMongoClient();
 
@@ -23,7 +23,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseEndpointDefinitions();
 app.UseCustomExceptionHandler();
-app.UseCors(o => o.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseCors(b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UsePrismaticHubs();
 
 app.Run();

@@ -2,19 +2,19 @@
 
 namespace Prismatic.Application.Matches
 {
-    public class StartMatchRequest : IRequest<StartMatchResponse>
+    public class StartMatchRequest : IRequest
     {
 
     }
 
-    public class StartMatchResponse : IRequestHandler<StartMatchRequest, StartMatchResponse>
+    public class StartMatchResponse : IRequestHandler<StartMatchRequest>
     {
         public StartMatchResponse()
         {
 
         }
 
-        public Task<StartMatchResponse> Handle(StartMatchRequest request, CancellationToken cancellationToken)
+        public Task Handle(StartMatchRequest request, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
