@@ -5,6 +5,15 @@ namespace Prismatic.Domain.Entities
     public class Lobby : Entity
     {
         public List<Player> Players { get; set; } = new();
-        public Guid OwnerId { get; set; }
+        public required Guid OwnerId { get; set; }
+
+        public required GameStatus Status { get; set; }
+    }
+
+    public enum GameStatus 
+    {
+        Open,
+        Playing,
+        Closed
     }
 }
