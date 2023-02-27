@@ -15,9 +15,10 @@ namespace Prismatic.Core.Infra
             Collection = db.GetCollection<T>(CollectionName);
         }
 
-        public async Task Add(T entity)
+        public async Task<Guid> Add(T entity)
         {
             await Collection.InsertOneAsync(entity);
+            return entity.Id;
         }
 
         public async Task<T> Get(Guid id)

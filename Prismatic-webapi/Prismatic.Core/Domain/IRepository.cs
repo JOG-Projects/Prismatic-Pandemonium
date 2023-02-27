@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Prismatic.Core.Domain
+﻿namespace Prismatic.Core.Domain
 {
     public interface IRepository<T>
     {
-        public Task Add(T entity);
+        public Task<Guid> Add(T entity);
 
         public Task<T> Get(Guid id);
 
