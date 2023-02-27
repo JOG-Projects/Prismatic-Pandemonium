@@ -1,7 +1,12 @@
-﻿namespace Prismatic.Domain.Entities
+﻿using Prismatic.Core.Domain;
+
+namespace Prismatic.Domain.Entities
 {
-    public class Player
+    public class Player : Entity
     {
-        public string Name { get; set; }
+        public string Username { get; set; }
+        public string ConnectionId { get; set; }
+        public Status Status { get; set; }
+        public Guid CurrentLobby { get; set; }
     }
 }
