@@ -99,7 +99,7 @@
     </div>
   <div class="player-box">
     <div #player_hand class="player-hand">
-        <img *ngFor="let card of deck" [src]=card>
+        <img *ngFor="let card of deck" [src]=card (onclick)="moveCard">
     </div>
   </div>
     <!-- <div class="color-picker">

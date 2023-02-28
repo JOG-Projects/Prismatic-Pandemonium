@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
@@ -12,18 +13,23 @@ export class AppComponent implements OnInit{
     title.setTitle('Prismatic Pandemonium')
   }
   ngOnInit(): void {
-    // if(this.player_hand === null)
-    //   return
+   
+   
+}
+   public moveCard() {
+    console.log("teste")
+    var cards = document.querySelectorAll<HTMLElement>('.player-hand img');
 
-    // let sexo = new Array(this.player_hand.childNodes)
-
-    // sexo.forEach(element => {
-    //    element.item = this.player_hand = (globalEvent:GlobalEventHandlers, ev: MouseEvent) => {
-
-    //   }
-    // });
-    
+    console.log("teste")
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].style.position = 'absolute';
+      cards[i].style.transform = "translateY(-300px) translateX(-300px)";
+      cards[i].style.rotate = "360deg";
+      
+    }
+    console.log(cards);
   }
+
     deck = [
     "../assets/blue0.png",
     "../assets/red12.png",
@@ -34,5 +40,4 @@ export class AppComponent implements OnInit{
     "../assets/yellow4.png",]
 
     @ViewChild("player_hand") player_hand : HTMLDivElement | null = null
-
 }

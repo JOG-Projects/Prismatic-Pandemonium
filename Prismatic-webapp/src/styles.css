@@ -68,8 +68,8 @@ img{
 
 .player-hand img:active{
     transition: all 0.4s ease-in-out;
-    transform: translateY(-300px) translateX(-300px);
-    rotate: 360deg;
+    /* transform: translateY(-300px) translateX(-300px);
+    rotate: 360deg; */
 }
 
 .player2-hand img{
