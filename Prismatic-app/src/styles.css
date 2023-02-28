@@ -11,18 +11,22 @@ body{
     margin: auto;
     margin-top: 50px;
     margin-bottom: -50px;
-    font-family: 'Sans Serif';
+    font-family: "League Spartan", sans-serif;
 }
 
 .player2-box{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;
+    display: flex;;
+    justify-content: space-evenly;
+    height: 200px;
+    margin-right: -70px;
 }
 
 .play-area{
     display: flex;
-    justify-content: space-evenly;
+    margin-top: 120px;
+    justify-content: space-between;
+    /* max-width: 33%; */
+    /* margin-left: 33%; */
 }
 
 .score{
@@ -40,15 +44,16 @@ body{
 
 .player-box{
     display: flex;
-    justify-content: center;
-    margin-top: 100px;
+    justify-content: space-around;
+    max-width: 40%;
+    margin-left: 31.5%;
 }
 
 img{
     width: 100px;
     margin-left: -28px;
     border-radius: 10px;
-    box-shadow: -7px -7px 14px darkblue;
+    box-shadow: -7px -7px 14px darkslategray;
 }
 
 .player-hand img:hover{
@@ -57,8 +62,20 @@ img{
     cursor: pointer;
 }
 
-.player-hand img{
-    transition: all 0.1s ease-in-out;
+.player-hand{
+    transition: all 1s ease-in-out;
+}
+
+.player-hand img:active{
+    transition: all 0.4s ease-in-out;
+    transform: translateY(-300px) translateX(-300px);
+    rotate: 360deg;
+}
+
+.player2-hand img{
+    margin-left: -78px;
+    transform: scale(0.7);
+    position: relative;
 }
 
 .draw-pile img:hover{
@@ -69,12 +86,11 @@ img{
 
 .draw-pile img{
     transition: all 0.1s ease-in-out;
-    margin: auto;
-    display: block;
 }
 
 .play-pile img{
     transition: all 1s ease-in-out;
+    
 }
 
 #draw-card{
