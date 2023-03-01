@@ -1,16 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   constructor(title: Title) {
     title.setTitle('Prismatic Pandemonium')
   }
-
-  ngOnInit(): void { }
 
   public moveCard(ev: MouseEvent) {
     let card = ev.target as HTMLElement
@@ -26,7 +24,8 @@ export class AppComponent implements OnInit {
     "../assets/green0.png",
     "../assets/green1.png",
     "../assets/blue5.png",
-    "../assets/yellow4.png",]
+    "../assets/yellow4.png"
+  ]
 
   @ViewChild("player_hand") player_hand: HTMLDivElement | null = null
 }
