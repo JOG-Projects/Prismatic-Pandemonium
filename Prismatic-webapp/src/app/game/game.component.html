@@ -90,8 +90,8 @@
         </div>
     </div>
     <div class="player-box">
-        <div #player_hand class="player-hand">
-            <img *ngFor="let card of deck" [src]=card (click)="moveCard($event)">
+        <div #player_hand class="player-hand" id="cards-container">
+            <img *ngFor="let card of deck" [src]=card (click)="moveCard($event)" class="card">
         </div>
     </div>
     <!-- <div class="color-picker">

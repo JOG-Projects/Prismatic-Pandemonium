@@ -44,7 +44,7 @@ html{
 
 .player-box{
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     max-width: 40%;
     margin-left: 31.5%;
 }
@@ -63,14 +63,11 @@ img{
 }
 
 .player-hand{
-    transition: all 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.player-hand img:active{
-    transition: all 0.4s ease-in-out;
-    /* transform: translateY(-300px) translateX(-300px);
-    rotate: 360deg; */
-}
 
 .player2-hand img{
     margin-left: -78px;
